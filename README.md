@@ -126,7 +126,37 @@ This reduces DOM nodes, improves scroll performance and rendering speed.
 
 ## 7. ✂️ Critical CSS
 
-Load only the CSS needed for above-the-fold content to reduce render-blocking and improve FCP.
+**Critical CSS** is the technique of extracting and inlining the CSS that is required to render the above-the-fold content of a webpage, while deferring the loading of the rest of the styles. This ensures that the page is visually ready to interact with as quickly as possible.
+
+#### Why is Critical CSS Important?
+
+- **Faster First Paint:** By inlining critical styles, the browser can render the above-the-fold content without waiting for external CSS files to be fully loaded. This helps to reduce the **First Paint (FP)** and **First Contentful Paint (FCP)** times.
+- **Avoiding Render-Blocking:** If CSS is not critical to the first render, it can be loaded asynchronously to improve page speed, reducing blocking times.
+- **Improved User Experience:** A faster initial render reduces the time users have to wait, providing a smoother and more responsive experience.
+
+#### How to Implement Critical CSS
+
+1. Identify the critical CSS for the above-the-fold content.
+2. Extract the critical CSS and inline it directly into the HTML `<head>` of the page.
+3. Defer the non-critical CSS by loading it asynchronously or after the page has been rendered.
+
+Example of inlining critical CSS:
+
+```html
+<head>
+  <style>
+    /* Critical CSS goes here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css" media="non-crucial" />
+</head>
+```
 
 - Use tools like [Critters](https://www.npmjs.com/package/critters) in your build setup
 - Helps solve `Eliminate render-blocking resources` issue in Lighthouse
