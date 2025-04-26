@@ -70,10 +70,31 @@ You can preload an image using the following code:
 
 ---
 
-## 3. 🧹 Clean Up Code
+### 3. 🧹 Clean Up Code
 
-- Remove unused variables, components, and styles
-- Reduce dead code that bloats the JS bundle
+Cleaning up the code is an essential part of optimizing your website. It reduces the bundle size, improves maintainability, and enhances performance. Here’s how to clean up and optimize your code:
+
+#### 3.1 Remove Unused Code
+
+Eliminate any unused or redundant code (functions, variables, dependencies) to reduce bloat and improve performance. This can include removing unused libraries or refactoring old logic.
+
+#### 3.2 Optimize Loops and Event Handlers
+
+Ensure your loops and event handlers are optimized to prevent unnecessary recalculations and reflows in the browser. Avoid triggering **reflow** (recalculating layout) and **repaint** (redrawing elements) too many times, as these can significantly slow down your page. Batch DOM updates and use **`requestAnimationFrame`** for smoother animations.
+
+#### 3.3 Defer or Lazy Load Non-Essential Code
+
+Load only the critical code upfront and defer or lazy-load non-essential resources. This can include splitting code and loading images, components, or modules only when needed.
+
+#### 3.4 Minify and Compress Your Code
+
+Minify your JavaScript and CSS files to reduce file size and improve load times. Use tools like **Terser** for JS and **CSSNano** for CSS.
+
+#### 3.5 Eliminate Console Logs in Production
+
+Remove `console.log` statements from your production code, as they can impact performance, especially if called frequently inside loops or event handlers.
+
+By cleaning up the code, you can ensure that your website loads faster, performs better, and remains easier to maintain.
 
 ---
 
@@ -86,6 +107,7 @@ Your final JavaScript bundle is what users download. Reducing its size improves 
 ```bash
 npx source-map-explorer build/static/js/*.js
 ```
+This command will generate an interactive treemap of your JavaScript files, showing the relative size of each part of your bundle. This can help you quickly identify which libraries are taking up the most space.
 
 ### Changes I made:
 - Replaced `moment.js` (~60KB) with `dayjs`
