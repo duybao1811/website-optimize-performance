@@ -111,7 +111,7 @@ This command will generate an interactive treemap of your JavaScript files, show
 
 ### Changes I made:
 - Replaced `moment.js` (~60KB) with `dayjs`
-- Replaced `react-datepicker` with lighter `react-daypicker`
+- Replaced `react-datepicker` (~265kb) with lighter `react-day-picker` (~66kb)
 - Upgraded Firebase from v8 to v11 which supports **tree-shaking**
 
 ### 🔍 What is Tree-Shaking?
