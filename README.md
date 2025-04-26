@@ -114,7 +114,7 @@ This command will generate an interactive treemap of your JavaScript files, show
 - Replaced `react-datepicker` (~265kb) with lighter `react-day-picker` (~66kb)
 - Upgraded Firebase from v8 to v11 which supports **tree-shaking**
   ![react-datepicker-sourmap](./images/react-datepicker-sourmap.PNG)
-  ![react-day-picker-sourmap](./images/react-day-picker-sourmap.PNG)
+  ![react-day-picker-sourmap](./images/react-day-picker-sourcemap.PNG)
 
 ### 🔍 What is Tree-Shaking?
 Tree-shaking removes unused code from libraries during bundling. You only ship the functions you use.
