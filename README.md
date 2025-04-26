@@ -2,10 +2,6 @@
 
 # 🚀 Optimizing Website Performance: From Lighthouse Score 33 to 99
 
-![Before](./before-optimize.png)
-
-![After](./after-optimize.png)
-
 Over the past weeks, I focused on improving the performance of a website project, and successfully raised its Lighthouse Performance score from **33 to 99**. This document summarizes the optimization techniques I applied, with practical explanations and code examples.
 
 ---
