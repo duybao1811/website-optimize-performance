@@ -58,6 +58,16 @@ Optimizing these metrics directly impacts perceived performance and user experie
 
 **Note:** For components rendered immediately, use fallback UIs (e.g., skeleton loaders) to avoid CLS.
 
+### Preloading Heavy Images
+
+To speed up the loading of important visual elements like **banners** or **background images** in the header, you can use **preloading**. This allows these assets to be fetched earlier in the page load process, improving perceived performance.
+
+You can preload an image using the following code:
+
+```html
+<link rel="preload" href="path/to/your-image.webp" as="image" type="image/webp" />
+```
+
 ---
 
 ## 3. 🧹 Clean Up Code
