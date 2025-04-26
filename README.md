@@ -2,6 +2,10 @@
 
 # 🚀 Optimizing Website Performance: From Lighthouse Score 33 to 99
 
+![Before](./before-optimize.png)
+
+![After](./after-optimize.png)
+
 Over the past weeks, I focused on improving the performance of a website project, and successfully raised its Lighthouse Performance score from **33 to 99**. This document summarizes the optimization techniques I applied, with practical explanations and code examples.
 
 ---
@@ -34,6 +38,11 @@ Optimizing these metrics directly impacts perceived performance and user experie
 }
 ```
 
+### ✅ Preload Critical Assets
+```html
+<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+```
+
 ### Benefits:
 - Eliminates external requests
 - Uses `font-display: swap` to prevent invisible text
@@ -45,7 +54,9 @@ Optimizing these metrics directly impacts perceived performance and user experie
 ## 2. 🖼️ Image Optimization & Lazy Loading
 
 - Use `loading="lazy"` for `<img>` tags
-- Convert large `.jpg`/`.png` to `.webp`
+- Converted .jpg and .png images to .webp, reducing image sizes by 30-70% while maintaining good quality. .webp is more efficient than .jpg and .png in terms of compression:
+    - JPG images: Can be reduced by 20-30% compared to .jpg while maintaining similar or better quality.
+    - PNG images: Especially for images with transparency, .webp can reduce size by 40-80% compared to .png.
 - Compress large images with [Squoosh](https://squoosh.app/)
 - Lazy load components not visible initially (e.g., modal, tabs)
 
@@ -71,9 +82,8 @@ npx source-map-explorer build/static/js/*.js
 ```
 
 ### Changes I made:
-- Replaced `moment.js` (300KB) with `dayjs`
+- Replaced `moment.js` (~60KB) with `dayjs`
 - Replaced `react-datepicker` with lighter `react-daypicker`
-- Replaced `react.qrcode` (800KB) with a minimal library `qrcode`
 - Upgraded Firebase from v8 to v11 which supports **tree-shaking**
 
 ### 🔍 What is Tree-Shaking?
@@ -112,7 +122,7 @@ This reduces DOM nodes, improves scroll performance and rendering speed.
 
 Load only the CSS needed for above-the-fold content to reduce render-blocking and improve FCP.
 
-- Use tools like [Critters](https://github.com/GoogleChromeLabs/critters) in your build setup
+- Use tools like [Critters](https://www.npmjs.com/package/critters) in your build setup
 - Helps solve `Eliminate render-blocking resources` issue in Lighthouse
 
 ---
@@ -126,11 +136,6 @@ Load only the CSS needed for above-the-fold content to reduce render-blocking an
 ---
 
 ## 9. ⚙️ Bonus Techniques
-
-### ✅ Preload Critical Assets
-```html
-<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
-```
 
 ### ✅ Debounce/Throttle Input Events
 ```js
@@ -154,4 +159,4 @@ After applying these techniques, the Lighthouse Performance score increased from
 
 Thanks for reading! Feedback and suggestions are welcome 🙌
 
-> ⭐ GitHub repo: [github.com/your-username/website-performance-case-study](https://github.com/your-username/website-performance-case-study)
+> ⭐ GitHub repo: [github.com/duybao1811/website-optimize-performance](https://github.com/duybao1811/website-optimize-performance)
