@@ -110,7 +110,7 @@ npx source-map-explorer build/static/js/*.js
 This command will generate an interactive treemap of your JavaScript files, showing the relative size of each part of your bundle. This can help you quickly identify which libraries are taking up the most space.
 
 ### Changes I made:
-- Replaced `moment.js` (~60KB) with `dayjs`
+- Replaced `moment.js` (~60KB) with `dayjs` (~15kb)
 - Replaced `react-datepicker` (~265kb) with lighter `react-day-picker` (~66kb)
 - Upgraded Firebase from v8 to v11 which supports **tree-shaking**
   ![react-datepicker-sourmap](./images/react-datepicker-sourmap.PNG)
